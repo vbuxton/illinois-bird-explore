@@ -121,6 +121,102 @@ export interface SummaryResult {
   end: number;
 }
 
+// eBird API Response Types
+export interface EBirdObservation {
+  speciesCode: string;
+  comName: string;
+  sciName: string;
+  locId: string;
+  locName: string;
+  obsDt: string; // ISO date string
+  howMany: number;
+  lat: number;
+  lng: number;
+  obsValid: boolean;
+  obsReviewed: boolean;
+  locationPrivate: boolean;
+  subId: string;
+  // Optional fields
+  firstName?: string;
+  lastName?: string;
+  hasComments?: boolean;
+  hasRichMedia?: boolean;
+}
+
+export interface EBirdHotspot {
+  locId: string;
+  locName: string;
+  countryCode: string;
+  subnational1Code: string;
+  subnational2Code?: string;
+  lat: number;
+  lng: number;
+  latestObsDt: string;
+  numSpeciesAllTime: number;
+}
+
+export interface EBirdRegionalStats {
+  numSpecies: number;
+  numContributors: number;
+  numChecklists: number;
+}
+
+// Processed Distribution Data Types
+export interface ProcessedObservation {
+  id: string;
+  speciesCode: string;
+  commonName: string;
+  scientificName: string;
+  location: {
+    id: string;
+    name: string;
+    latitude: number;
+    longitude: number;
+    isPrivate: boolean;
+  };
+  date: Date;
+  count: number;
+  verified: boolean;
+  reviewed: boolean;
+  hasMedia: boolean;
+  observer?: string;
+  checklistId: string;
+}
+
+export interface ObservationCluster {
+  latitude: number;
+  longitude: number;
+  count: number;
+  observations: ProcessedObservation[];
+}
+
+export interface DistributionStats {
+  totalObservations: number;
+  uniqueLocations: number;
+  dateRange: {
+    start: Date;
+    end: Date;
+  };
+  topCounties: Array<{
+    county: string;
+    count: number;
+  }>;
+  observationsByDate: Array<{
+    date: string;
+    count: number;
+  }>;
+}
+
+// Map Controls State
+export interface MapControlsState {
+  showObservations: boolean;
+  showHeatmap: boolean;
+  showHotspots: boolean;
+  daysBack: number;
+  verifiedOnly: boolean;
+  mediaOnly: boolean;
+}
+
 export interface ModelInfo {
   method: string;
   lastUpdated: Date;

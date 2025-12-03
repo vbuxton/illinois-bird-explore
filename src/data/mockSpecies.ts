@@ -58,7 +58,7 @@ export const mockSpecies: Species[] = [
     description: 'The American Goldfinch is a small, cheerful songbird. Males are bright yellow with black cap and wings in summer, while females are more subdued olive. They molt to a dull brownish color in winter. These acrobatic birds are common at feeders, especially enjoying thistle seed.',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/American_Goldfinch_male_breeding_plumage.jpg/800px-American_Goldfinch_male_breeding_plumage.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/20240718_american_goldfinch_pleasant_valley_PD206284_01.jpg',
         caption: 'American Goldfinch in breeding plumage',
         credit: 'Wikimedia Commons',
         isFeatured: true,
@@ -101,7 +101,7 @@ export const mockSpecies: Species[] = [
     description: 'The Red-tailed Hawk is one of the most common and widespread hawks in North America. Adults have distinctive rusty-red tail feathers. These large raptors are often seen perched on telephone poles or soaring in wide circles high overhead.',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Red-tailed_Hawk_Buteo_jamaicensis_Full_Body_1880px.jpg/800px-Red-tailed_Hawk_Buteo_jamaicensis_Full_Body_1880px.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Buteo_jamaicensis_in_flight_at_Llano_Seco-1520.jpg',
         caption: 'Red-tailed Hawk perched',
         credit: 'Wikimedia Commons',
         isFeatured: true,
@@ -143,7 +143,7 @@ export const mockSpecies: Species[] = [
     description: 'Blue Jays are intelligent, noisy, and beautiful birds. Their bright blue plumage, white chest, and distinctive crest make them unmistakable. They are bold visitors to feeders and are known for their raucous calls and ability to mimic hawk sounds.',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Blue_Jay-27527-2.jpg/800px-Blue_Jay-27527-2.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/20231108_blue_jay_goodwin_dock_PND08988.jpg',
         caption: 'Blue Jay',
         credit: 'Wikimedia Commons',
         isFeatured: true,
@@ -228,7 +228,7 @@ export const mockSpecies: Species[] = [
     description: 'Mourning Doves are graceful, slender birds named for their mournful cooing song. They are one of the most abundant birds in North America. Their soft gray-brown plumage and long pointed tail make them distinctive. They are common at bird feeders and often seen perched on telephone wires.',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Mourning_Dove_2006.jpg/800px-Mourning_Dove_2006.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/70/20240525_mourning_dove_major_donnelly_park_PD206323.jpg',
         caption: 'Mourning Dove',
         credit: 'Wikimedia Commons',
         isFeatured: true,
@@ -270,7 +270,7 @@ export const mockSpecies: Species[] = [
     description: 'The Ruby-throated Hummingbird is the only hummingbird species that regularly breeds in eastern North America. Males have an iridescent ruby-red throat. These tiny, energetic birds are remarkable for their aerial agility and long-distance migration across the Gulf of Mexico.',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Ruby-throated_Hummingbird_2.jpg/800px-Ruby-throated_Hummingbird_2.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/38/20240707_ruby_throated_hummingbird_bafflin_sanctuary_PD204642_38.jpg',
         caption: 'Male Ruby-throated Hummingbird',
         credit: 'Wikimedia Commons',
         isFeatured: true,
@@ -314,7 +314,7 @@ export const mockSpecies: Species[] = [
     description: 'The Downy Woodpecker is the smallest woodpecker in North America and a common backyard visitor. Black and white with a small bill, males have a red patch on the back of the head. They are acrobatic feeders, often hanging upside down on branches and at suet feeders.',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Downy_Woodpecker.jpg/800px-Downy_Woodpecker.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/16/20240325_downy_woodpecker_earle_park_PD206048.jpg',
         caption: 'Downy Woodpecker',
         credit: 'Wikimedia Commons',
         isFeatured: true,

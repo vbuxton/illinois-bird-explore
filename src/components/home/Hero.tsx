@@ -11,13 +11,16 @@ const Hero: React.FC = () => {
           <h1 className="text-5xl font-bold mb-6">
             Discover Illinois Birds
           </h1>
-          <p className="text-xl mb-4 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl mb-4 max-w-8xl mx-auto leading-relaxed">
             Explore decades of bird monitoring data from across Illinois. Our comprehensive database 
-            tracks population trends, migration patterns, and conservation status of the state's diverse avian species.
+            tracks population trends, migration patterns, and conservation status of the state's diverse avian species. 
+            From backyard feeders to remote prairies, discover the incredible diversity of birdlife across the Prairie State.
           </p>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-lg mb-8 max-w-8xl mx-auto opacity-90">
             Building on a rich legacy of ornithological research, Illinois Birds brings together data 
-            from citizen scientists, researchers, and monitoring programs to inform conservation action.
+            from citizen scientists, researchers, and monitoring programs to inform conservation action. 
+            Access interactive maps, population trend analyses, and species profiles that help tell the story 
+            of Illinois birds and their changing habitats.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/species" className="px-6 py-3 rounded-lg font-semibold transition-colors" style={{

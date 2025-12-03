@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { mockSpecies } from '../../data/mockSpecies';
 
 interface SpeciesFeature {
   commonName: string;
@@ -12,28 +13,31 @@ interface SpeciesFeature {
 const SpeciesOfWeek: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Featured species with IDs linking to actual species pages
+  // Featured species using data from mockSpecies
+  const featuredSpeciesData = mockSpecies
+    .filter(s => ['northern-cardinal', 'american-goldfinch', 'red-tailed-hawk'].includes(s.id));
+
   const featuredSpecies: SpeciesFeature[] = [
     {
-      commonName: 'American Goldfinch',
-      scientificName: 'Spinus tristis',
-      description: 'A bright yellow songbird that visits feeders year-round. Males are brilliant yellow in summer with black forehead and wings.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/American_Goldfinch_male_breeding_plumage.jpg/800px-American_Goldfinch_male_breeding_plumage.jpg',
-      funFact: 'One of the latest nesting birds in North America, waiting until late summer when thistle seeds are abundant.',
+      commonName: featuredSpeciesData.find(s => s.id === 'american-goldfinch')?.commonName || 'American Goldfinch',
+      scientificName: featuredSpeciesData.find(s => s.id === 'american-goldfinch')?.scientificName || 'Spinus tristis',
+      description: featuredSpeciesData.find(s => s.id === 'american-goldfinch')?.description.slice(0, 150) + '...' || 'A bright yellow songbird that visits feeders year-round.',
+      imageUrl: featuredSpeciesData.find(s => s.id === 'american-goldfinch')?.images[0]?.url || 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/American_Goldfinch_male_breeding_plumage.jpg/800px-American_Goldfinch_male_breeding_plumage.jpg',
+      funFact: featuredSpeciesData.find(s => s.id === 'american-goldfinch')?.funFacts[0] || 'One of the latest nesting birds in North America.',
     },
     {
-      commonName: 'Northern Cardinal',
-      scientificName: 'Cardinalis cardinalis',
-      description: 'Illinois\' state bird, recognizable by its vibrant red plumage and distinctive crest.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Cardinal.jpg/800px-Cardinal.jpg',
-      funFact: 'Both male and female cardinals sing, unlike most songbirds where only males vocalize.',
+      commonName: featuredSpeciesData.find(s => s.id === 'northern-cardinal')?.commonName || 'Northern Cardinal',
+      scientificName: featuredSpeciesData.find(s => s.id === 'northern-cardinal')?.scientificName || 'Cardinalis cardinalis',
+      description: featuredSpeciesData.find(s => s.id === 'northern-cardinal')?.description.slice(0, 150) + '...' || 'Illinois\' state bird, recognizable by its vibrant red plumage.',
+      imageUrl: featuredSpeciesData.find(s => s.id === 'northern-cardinal')?.images[0]?.url || 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Cardinal.jpg/800px-Cardinal.jpg',
+      funFact: featuredSpeciesData.find(s => s.id === 'northern-cardinal')?.funFacts[0] || 'Both male and female cardinals sing, unlike most songbirds.',
     },
     {
-      commonName: 'Red-tailed Hawk',
-      scientificName: 'Buteo jamaicensis',
-      description: 'One of the most common hawks in North America, often seen perched along highways.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Red-tailed_Hawk_Buteo_jamaicensis_Full_Body_1880px.jpg/800px-Red-tailed_Hawk_Buteo_jamaicensis_Full_Body_1880px.jpg',
-      funFact: 'Their iconic scream is often used in movies for any large bird, even eagles!',
+      commonName: featuredSpeciesData.find(s => s.id === 'red-tailed-hawk')?.commonName || 'Red-tailed Hawk',
+      scientificName: featuredSpeciesData.find(s => s.id === 'red-tailed-hawk')?.scientificName || 'Buteo jamaicensis',
+      description: featuredSpeciesData.find(s => s.id === 'red-tailed-hawk')?.description.slice(0, 150) + '...' || 'One of the most common hawks in North America.',
+      imageUrl: featuredSpeciesData.find(s => s.id === 'red-tailed-hawk')?.images[0]?.url || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Red-tailed_Hawk_Buteo_jamaicensis_Full_Body_1880px.jpg/800px-Red-tailed_Hawk_Buteo_jamaicensis_Full_Body_1880px.jpg',
+      funFact: featuredSpeciesData.find(s => s.id === 'red-tailed-hawk')?.funFacts[0] || 'Their iconic scream is often used in movies for any large bird, even eagles!',
     },
   ];
 

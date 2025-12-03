@@ -4,3 +4,75 @@ body {
   background-color: #F9FAFB;
   color: #1F2937;
 }
+
+/* Leaflet Marker Cluster Styles */
+.marker-cluster-small {
+  background-color: rgba(37, 99, 235, 0.6);
+}
+
+.marker-cluster-small div {
+  background-color: rgba(37, 99, 235, 0.8);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(249, 115, 22, 0.6);
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(249, 115, 22, 0.8);
+}
+
+.marker-cluster-large {
+  background-color: rgba(220, 38, 38, 0.6);
+}
+
+.marker-cluster-large div {
+  background-color: rgba(220, 38, 38, 0.8);
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 50%;
+}
+
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Leaflet Popup Customization */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+/* Range Slider Customization */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+  border: none;
+}
