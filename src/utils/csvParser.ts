@@ -34,7 +34,7 @@ function parseCSV<T>(csvText: string, mapper: (row: string[]) => T): T[] {
  * Fetch and parse trend estimates CSV
  */
 export async function fetchTrendEstimates(): Promise<TrendEstimate[]> {
-  const response = await fetch('/all_species_trend_estimates.csv');
+  const response = await fetch(`${import.meta.env.BASE_URL}all_species_trend_estimates.csv`);
   const csvText = await response.text();
   
   return parseCSV<TrendEstimate>(csvText, (values) => ({
@@ -50,7 +50,7 @@ export async function fetchTrendEstimates(): Promise<TrendEstimate[]> {
  * Fetch and parse summary results CSV
  */
 export async function fetchSummaryResults(): Promise<SummaryResult[]> {
-  const response = await fetch('/all_species_summary_results.csv');
+  const response = await fetch(`${import.meta.env.BASE_URL}all_species_summary_results.csv`);
   const csvText = await response.text();
   
   return parseCSV<SummaryResult>(csvText, (values) => ({
