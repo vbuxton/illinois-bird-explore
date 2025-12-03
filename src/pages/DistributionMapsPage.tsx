@@ -22,7 +22,7 @@ const DistributionMapsPage: React.FC = () => {
 
   // Map control state
   const [controlState, setControlState] = useState<MapControlsState>({
-    showObservations: false,
+    showObservations: true,
     showHeatmap: true,
     showHotspots: false,
     daysBack: 30,

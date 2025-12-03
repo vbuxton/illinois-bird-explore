@@ -15,9 +15,9 @@ const SpeciesSelector: React.FC<SpeciesSelectorProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredSpecies = species.filter(s =>
-    s.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredSpecies = searchTerm
+    ? species.filter(s => s.toLowerCase().includes(searchTerm.toLowerCase()))
+    : species;
 
   const handleSelect = (speciesName: string) => {
     onSelectSpecies(speciesName);
