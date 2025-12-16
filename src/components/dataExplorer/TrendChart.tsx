@@ -126,7 +126,7 @@ const TrendChart: React.FC<TrendChartProps> = ({ data, speciesName }) => {
       
       <div className="mt-4 text-xs text-gray-500 border-t pt-3">
         <p>
-          <strong>Data Source:</strong> Illinois Breeding Bird Survey models (1980-2024)
+          <strong>Data Source:</strong> Illinois Spring Bird Count models (1980-2024)
         </p>
         <p className="mt-1">
           The trend values represent the estimated population index relative to the 1980 baseline. 

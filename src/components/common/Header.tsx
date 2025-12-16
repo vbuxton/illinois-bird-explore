@@ -21,76 +21,18 @@ const Header: React.FC = () => {
           {/* Navigation */}
           <nav className="hidden md:flex space-x-1">
             <Link
-              to="/"
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors"
-            >
-              Home
-            </Link>
-
-            <Link
               to="/species"
               className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors"
             >
               Species Accounts
             </Link>
 
-            {/* Data Explorer Dropdown */}
-            <Menu as="div" className="relative">
-              <MenuButton className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors">
-                Data Explorer
-                <FiChevronDown className="ml-1" />
-              </MenuButton>
-              <MenuItems className="absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/data-explorer/maps"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Distribution Maps
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/data-explorer/trends"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Population Trends
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/data-explorer/migration"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Migration Timing
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/data-explorer/habitat"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Habitat & Land Cover
-                    </Link>
-                  )}
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+            <Link
+              to="/migration"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors"
+            >
+              Migration
+            </Link>
 
             <Link
               to="/monitoring"
@@ -105,11 +47,141 @@ const Header: React.FC = () => {
                 Conservation
                 <FiChevronDown className="ml-1" />
               </MenuButton>
-              <MenuItems className="absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <MenuItems className="absolute left-0 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/conservation/status"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Conservation Status Lists (E and T)
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/conservation/sgnc"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      SGCN
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/conservation/extinct"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Extinct Birds of Illinois
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/conservation/what-you-can-do"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      What You Can Do for Birds
+                    </Link>
+                  )}
+                </MenuItem>
                 <MenuItem>
                   {({ active }) => (
                     <Link
                       to="/conservation/issues"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Conservation Issues
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/conservation/organizations"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Bird Conservation Organizations
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/conservation/illinois-birds"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Full Annual Cycle Conservation for "Illinois Birds"
+                    </Link>
+                  )}
+                </MenuItem>
+              </MenuItems>
+            </Menu>
+
+            {/* Bird Curiosity/Education Dropdown */}
+            <Menu as="div" className="relative">
+              <MenuButton className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors">
+                Bird Curiosity/Education
+                <FiChevronDown className="ml-1" />
+              </MenuButton>
+              <MenuItems className="absolute left-0 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/education/where-to-see-birds"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Where You Can See Birds
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/education/opportunities"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      Opportunities in Your Area
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/education/what-is-birdwatching"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      What is Birdwatching
+                    </Link>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <Link
+                      to="/education/current-issues"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
@@ -121,198 +193,82 @@ const Header: React.FC = () => {
                 <MenuItem>
                   {({ active }) => (
                     <Link
-                      to="/conservation/action"
+                      to="/education/example-data"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
                     >
-                      What You Can Do
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/conservation/resources"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Resources for Managers
+                      Example Data for Schools
                     </Link>
                   )}
                 </MenuItem>
               </MenuItems>
             </Menu>
 
-            {/* Education Dropdown */}
+            {/* Illinois BirdLab Dropdown */}
             <Menu as="div" className="relative">
               <MenuButton className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors">
-                Education
+                Illinois BirdLab
                 <FiChevronDown className="ml-1" />
               </MenuButton>
-              <MenuItems className="absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <MenuItems className="absolute left-0 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <MenuItem>
                   {({ active }) => (
                     <Link
-                      to="/education/lessons"
+                      to="/birdlab/people"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
                     >
-                      Lesson Plans
+                      People
                     </Link>
                   )}
                 </MenuItem>
                 <MenuItem>
                   {({ active }) => (
                     <Link
-                      to="/education/datasets"
+                      to="/birdlab/history"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
                     >
-                      Downloadable Datasets
+                      History of Bird Research in Illinois
                     </Link>
                   )}
                 </MenuItem>
                 <MenuItem>
                   {({ active }) => (
                     <Link
-                      to="/education/activities"
+                      to="/birdlab/current-research"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
                     >
-                      Interactive Activities
+                      Current research
                     </Link>
                   )}
                 </MenuItem>
                 <MenuItem>
                   {({ active }) => (
                     <Link
-                      to="/education/articles"
+                      to="/birdlab/code"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
                     >
-                      Articles
-                    </Link>
-                  )}
-                </MenuItem>
-              </MenuItems>
-            </Menu>
-
-            {/* Researchers Dropdown */}
-            <Menu as="div" className="relative">
-              <MenuButton className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors">
-                For Researchers
-                <FiChevronDown className="ml-1" />
-              </MenuButton>
-              <MenuItems className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/researchers/methods"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Model Methods
+                      Resources - Code
                     </Link>
                   )}
                 </MenuItem>
                 <MenuItem>
                   {({ active }) => (
                     <Link
-                      to="/researchers/api"
+                      to="/birdlab/protocols"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } block px-4 py-2 text-sm text-gray-700`}
                     >
-                      API Access
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/researchers/data"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Model Output
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/researchers/protocols"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Protocols for Banders
-                    </Link>
-                  )}
-                </MenuItem>
-              </MenuItems>
-            </Menu>
-
-            {/* About Dropdown */}
-            <Menu as="div" className="relative">
-              <MenuButton className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green transition-colors">
-                About
-                <FiChevronDown className="ml-1" />
-              </MenuButton>
-              <MenuItems className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/about/mission"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Mission & Vision
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/about/team"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Team
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/about/collaborators"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Collaborators
-                    </Link>
-                  )}
-                </MenuItem>
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      to="/about/contact"
-                      className={`${
-                        active ? 'bg-gray-100' : ''
-                      } block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      Contact
+                      Resources - Protocols
                     </Link>
                   )}
                 </MenuItem>

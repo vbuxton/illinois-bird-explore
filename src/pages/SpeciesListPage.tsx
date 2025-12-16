@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import SpeciesFilter from '../components/species/SpeciesFilter';
-import SpeciesCard from '../components/species/SpeciesCard';
 import { mockSpecies } from '../data/mockSpecies';
 
 const SpeciesListPage: React.FC = () => {
@@ -47,8 +47,7 @@ const SpeciesListPage: React.FC = () => {
           Species Accounts
         </h1>
         <p className="text-lg" style={{ color: '#6B7280' }}>
-          Explore {mockSpecies.length} bird species documented in Illinois. Use the search and
-          filters below to find specific species by name, family, habitat, or conservation status.
+          Explore {mockSpecies.length} bird species documented in Illinois. Click on any species to view detailed information.
         </p>
       </div>
 
@@ -68,12 +67,55 @@ const SpeciesListPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Species Grid */}
+      {/* Species List with Thumbnails */}
       {filteredSpecies.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredSpecies.map((species) => (
-            <SpeciesCard key={species.id} species={species} />
-          ))}
+        <div className="bg-white rounded-lg shadow-md divide-y divide-gray-200">
+          {filteredSpecies.map((species) => {
+            const featuredImage = species.images.find(img => img.isFeatured) || species.images[0];
+            
+            return (
+              <Link
+                key={species.id}
+                to={`/species/${species.id}`}
+                className="flex items-center p-4 hover:bg-gray-50 transition-colors"
+              >
+                {/* Thumbnail */}
+                <div className="flex-shrink-0 w-20 h-20 rounded-md overflow-hidden bg-gray-200 mr-4">
+                  {featuredImage ? (
+                    <img
+                      src={featuredImage.url}
+                      alt={species.commonName}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#E5E7EB' }}>
+                      <span className="text-xs" style={{ color: '#9CA3AF' }}>No image</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Species Info */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold" style={{ color: '#2E5266' }}>
+                    {species.commonName}
+                  </h3>
+                  <p className="text-sm italic" style={{ color: '#6B7280' }}>
+                    {species.scientificName}
+                  </p>
+                  <p className="text-sm mt-1" style={{ color: '#374151' }}>
+                    {species.family}
+                  </p>
+                </div>
+
+                {/* Arrow */}
+                <div className="flex-shrink-0 ml-4">
+                  <svg className="w-6 h-6" style={{ color: '#4A7C59' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       ) : (
         <div className="text-center py-12">
