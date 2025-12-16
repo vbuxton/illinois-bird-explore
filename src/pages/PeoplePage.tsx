@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiUser, FiMail, FiExternalLink } from 'react-icons/fi';
+import { FiUser, FiMail } from 'react-icons/fi';
 
 const PeoplePage: React.FC = () => {
   return (

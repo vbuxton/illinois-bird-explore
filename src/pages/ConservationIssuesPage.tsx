@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiAlertCircle, FiSun, FiHome } from 'react-icons/fi';
+import { FiSun, FiHome } from 'react-icons/fi';
 
 const ConservationIssuesPage: React.FC = () => {
   return (
