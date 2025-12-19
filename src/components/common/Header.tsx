@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { FiChevronDown } from 'react-icons/fi';
+import { Menu, MenuButton, MenuItem, MenuItems, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { FiChevronDown, FiMenu, FiX } from 'react-icons/fi';
 
 const Header: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
             </span>
           </Link>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1">
             <Link
               to="/species"
@@ -275,6 +275,206 @@ const Header: React.FC = () => {
               </MenuItems>
             </Menu>
           </nav>
+
+          {/* Mobile menu button */}
+          <Disclosure as="div" className="md:hidden">
+            {({ open }) => (
+              <>
+                <DisclosureButton className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-green hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-green">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <FiX className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <FiMenu className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </DisclosureButton>
+
+                <DisclosurePanel className="absolute top-16 left-0 right-0 bg-white shadow-lg border-t border-gray-200 max-h-[calc(100vh-4rem)] overflow-y-auto">
+                  <div className="px-2 pt-2 pb-3 space-y-1">
+                    {/* Species Accounts */}
+                    <Link
+                      to="/species"
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green"
+                    >
+                      Species Accounts
+                    </Link>
+
+                    {/* Migration */}
+                    <Link
+                      to="/migration"
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green"
+                    >
+                      Migration
+                    </Link>
+
+                    {/* Monitoring Programs */}
+                    <Link
+                      to="/monitoring"
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green"
+                    >
+                      Monitoring Programs
+                    </Link>
+
+                    {/* Conservation Section */}
+                    <Disclosure as="div">
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton className="flex items-center justify-between w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green">
+                            Conservation
+                            <FiChevronDown
+                              className={`${
+                                open ? 'transform rotate-180' : ''
+                              } w-5 h-5 transition-transform`}
+                            />
+                          </DisclosureButton>
+                          <DisclosurePanel className="pl-4 space-y-1">
+                            <Link
+                              to="/conservation/status"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Conservation Status Lists (E and T)
+                            </Link>
+                            <Link
+                              to="/conservation/sgnc"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              SGCN
+                            </Link>
+                            <Link
+                              to="/conservation/extinct"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Extinct Birds of Illinois
+                            </Link>
+                            <Link
+                              to="/conservation/what-you-can-do"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              What You Can Do for Birds
+                            </Link>
+                            <Link
+                              to="/conservation/issues"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Conservation Issues
+                            </Link>
+                            <Link
+                              to="/conservation/organizations"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Bird Conservation Organizations
+                            </Link>
+                            <Link
+                              to="/conservation/illinois-birds"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Full Annual Cycle Conservation for "Illinois Birds"
+                            </Link>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+
+                    {/* Bird Curiosity/Education Section */}
+                    <Disclosure as="div">
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton className="flex items-center justify-between w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green">
+                            Bird Curiosity/Education
+                            <FiChevronDown
+                              className={`${
+                                open ? 'transform rotate-180' : ''
+                              } w-5 h-5 transition-transform`}
+                            />
+                          </DisclosureButton>
+                          <DisclosurePanel className="pl-4 space-y-1">
+                            <Link
+                              to="/education/where-to-see-birds"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Where You Can See Birds
+                            </Link>
+                            <Link
+                              to="/education/opportunities"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Opportunities in Your Area
+                            </Link>
+                            <Link
+                              to="/education/what-is-birdwatching"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              What is Birdwatching
+                            </Link>
+                            <Link
+                              to="/education/current-issues"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Current Issues
+                            </Link>
+                            <Link
+                              to="/education/example-data"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Example Data for Schools
+                            </Link>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+
+                    {/* Illinois BirdLab Section */}
+                    <Disclosure as="div">
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton className="flex items-center justify-between w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-green">
+                            Illinois BirdLab
+                            <FiChevronDown
+                              className={`${
+                                open ? 'transform rotate-180' : ''
+                              } w-5 h-5 transition-transform`}
+                            />
+                          </DisclosureButton>
+                          <DisclosurePanel className="pl-4 space-y-1">
+                            <Link
+                              to="/birdlab/people"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              People
+                            </Link>
+                            <Link
+                              to="/birdlab/history"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              History of Bird Research in Illinois
+                            </Link>
+                            <Link
+                              to="/birdlab/current-research"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Current research
+                            </Link>
+                            <Link
+                              to="/birdlab/code"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Resources - Code
+                            </Link>
+                            <Link
+                              to="/birdlab/protocols"
+                              className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 hover:text-primary-green"
+                            >
+                              Resources - Protocols
+                            </Link>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                </DisclosurePanel>
+              </>
+            )}
+          </Disclosure>
         </div>
       </div>
     </header>
