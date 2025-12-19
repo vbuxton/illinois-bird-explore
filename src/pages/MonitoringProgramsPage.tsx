@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiCalendar, FiUsers, FiExternalLink, FiMapPin, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import BandingStationsMap from '../components/dataExplorer/BandingStationsMap';
 
 const MonitoringProgramsPage: React.FC = () => {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -540,126 +541,261 @@ const MonitoringProgramsPage: React.FC = () => {
 
         {openSection === 'banding-stations' && (
           <div className="px-8 pb-8">
-        <p className="text-base mb-8" style={{ color: '#6B7280' }}>
-          Bird banding stations across Illinois provide critical data on survival, dispersal, migration routes, 
-          and population demographics. These stations operate during migration seasons and breeding periods to 
-          monitor bird populations through capture-mark-recapture techniques.
-        </p>
-
-        <div className="bg-gray-100 p-8 rounded-lg mb-6">
-          <div className="flex items-center justify-center mb-4">
-            <FiMapPin className="w-16 h-16" style={{ color: '#6B7280' }} />
-          </div>
-          <p className="text-center mb-4" style={{ color: '#6B7280' }}>
-            Interactive map of bird banding stations in Illinois
-          </p>
-          <p className="text-center text-sm" style={{ color: '#9CA3AF' }}>
-            Map integration coming soon
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-blue-50 p-5 rounded-lg border-2" style={{ borderColor: '#4A7C59' }}>
-            <h3 className="text-lg font-bold mb-2" style={{ color: '#2E5266' }}>
-              Northern Illinois Stations
-            </h3>
-            <p className="text-sm mb-3" style={{ color: '#6B7280' }}>
-              Stations monitoring migration along Lake Michigan and through Chicago region
+            <p className="text-base mb-8" style={{ color: '#6B7280' }}>
+              Bird banding stations across Illinois provide critical data on survival, dispersal, migration routes, 
+              and population demographics. These stations operate during migration seasons and breeding periods to 
+              monitor bird populations through capture-mark-recapture techniques.
             </p>
-            <ul className="text-sm space-y-1" style={{ color: '#374151' }}>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Illinois Beach State Park</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Montrose Point Bird Observatory</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Chicago Botanic Garden</span>
-              </li>
-            </ul>
+
+            <div className="mb-8">
+              <BandingStationsMap />
+            </div>
+
+            <div className="space-y-6">
+          {/* Big Marsh MAPS Station */}
+          <div className="bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: '#4A7C59' }}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold mb-1" style={{ color: '#2E5266' }}>
+                  Big Marsh MAPS Station
+                </h3>
+                <p className="text-sm font-semibold" style={{ color: '#4A7C59' }}>
+                  Chicago Ornithological Society
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(74, 124, 89, 0.1)', color: '#4A7C59' }}>
+                Est. 2020
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="text-sm mb-2"><strong>Contact:</strong> Edward Warden</p>
+                <p className="text-sm mb-2"><strong>Location:</strong> 41.687950, -87.565905</p>
+                <p className="text-sm mb-2"><strong>Type:</strong> MAPS (Monitoring Avian Productivity and Survivorship for Breeding Birds)</p>
+              </div>
+              <div>
+                <p className="text-sm mb-2"><strong>Open to Visitors:</strong> We occasionally welcome visitors during special demonstrations</p>
+                <p className="text-sm mb-2"><strong>Volunteers:</strong> Volunteers with banding experience may be prioritized at this time and prospective volunteers without banding experience may be put on a waitlist.</p>
+                <p className="text-sm mb-2"><strong>Contact:</strong> <a href="mailto:calumet@chicagobirder.org" className="text-blue-600 hover:underline">calumet@chicagobirder.org</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-sm mb-2"><strong>Website:</strong> <a href="https://www.chicagobirder.org/calumet" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">chicagobirder.org/calumet</a></p>
+              <p className="text-sm mb-2"><strong>Social Media:</strong> <a href="https://www.instagram.com/chicago_birder/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Instagram</a></p>
+              <p className="text-sm mb-2"><strong>Average Yearly Activity:</strong> 69.6 new birds/100 net hours</p>
+            </div>
+            
+            <div className="bg-blue-50 p-4 rounded">
+              <p className="text-sm font-semibold mb-2" style={{ color: '#2E5266' }}>Research Focus:</p>
+              <p className="text-sm" style={{ color: '#374151' }}>
+                Post-breeding departure timing of Yellow Warblers in relation to age and condition.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-green-50 p-5 rounded-lg border-2" style={{ borderColor: '#4A7C59' }}>
-            <h3 className="text-lg font-bold mb-2" style={{ color: '#2E5266' }}>
-              Central Illinois Stations
-            </h3>
-            <p className="text-sm mb-3" style={{ color: '#6B7280' }}>
-              Stations in river valleys and prairie regions
-            </p>
-            <ul className="text-sm space-y-1" style={{ color: '#374151' }}>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Forbes Biological Station</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Allerton Park</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Weldon Springs State Park</span>
-              </li>
-            </ul>
+          {/* Jubilee Farm MMN Bird Banding Station */}
+          <div className="bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: '#4A7C59' }}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold mb-1" style={{ color: '#2E5266' }}>
+                  Jubilee Farm MMN Bird Banding Station
+                </h3>
+                <p className="text-sm font-semibold" style={{ color: '#4A7C59' }}>
+                  Lincoln Land Association of Bird Banders
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(74, 124, 89, 0.1)', color: '#4A7C59' }}>
+                Est. 2021
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="text-sm mb-2"><strong>Contact:</strong> Tony Rothering</p>
+                <p className="text-sm mb-2"><strong>Location:</strong> 39.77500, -89.77500</p>
+                <p className="text-sm mb-2"><strong>Type:</strong> Migratory Monitoring</p>
+              </div>
+              <div>
+                <p className="text-sm mb-2"><strong>Open to Visitors:</strong> Yes</p>
+                <p className="text-sm mb-2"><strong>Volunteers:</strong> Yes</p>
+                <p className="text-sm mb-2"><strong>Contact:</strong> <a href="mailto:arothering94@gmail.com" className="text-blue-600 hover:underline">arothering94@gmail.com</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-sm mb-2"><strong>Social Media:</strong> <a href="https://www.facebook.com/LLABirdBanders/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook</a></p>
+              <p className="text-sm mb-2"><strong>Average Yearly Activity:</strong> 59.7 new birds/100 net hours</p>
+            </div>
+            
+            <div className="bg-blue-50 p-4 rounded">
+              <p className="text-sm font-semibold mb-2" style={{ color: '#2E5266' }}>Research Focus:</p>
+              <p className="text-sm" style={{ color: '#374151' }}>
+                Determination of Gender in the Dark-eyed Junco (Junco hyemalis hyemalis); Utilizing Morphological Methods and Molecular Genetics.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-purple-50 p-5 rounded-lg border-2" style={{ borderColor: '#4A7C59' }}>
-            <h3 className="text-lg font-bold mb-2" style={{ color: '#2E5266' }}>
-              Southern Illinois Stations
-            </h3>
-            <p className="text-sm mb-3" style={{ color: '#6B7280' }}>
-              Stations in forested and wetland habitats
-            </p>
-            <ul className="text-sm space-y-1" style={{ color: '#374151' }}>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Shawnee National Forest sites</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Crab Orchard NWR</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#4A7C59' }}>•</span>
-                <span>Cache River sites</span>
-              </li>
-            </ul>
+          {/* Springfield MAPS Station */}
+          <div className="bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: '#4A7C59' }}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold mb-1" style={{ color: '#2E5266' }}>
+                  Springfield MAPS Station
+                </h3>
+                <p className="text-sm font-semibold" style={{ color: '#4A7C59' }}>
+                  Lincoln Land Association of Bird Banders
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(74, 124, 89, 0.1)', color: '#4A7C59' }}>
+                Est. 2015
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="text-sm mb-2"><strong>Contact:</strong> Tony Rothering</p>
+                <p className="text-sm mb-2"><strong>Location:</strong> 39.75833, -89.60833</p>
+                <p className="text-sm mb-2"><strong>Type:</strong> MAPS (Monitoring Avian Productivity and Survivorship for Breeding Birds)</p>
+              </div>
+              <div>
+                <p className="text-sm mb-2"><strong>Open to Visitors:</strong> With prior notification</p>
+                <p className="text-sm mb-2"><strong>Volunteers:</strong> Yes</p>
+                <p className="text-sm mb-2"><strong>Contact:</strong> <a href="mailto:arothering94@gmail.com" className="text-blue-600 hover:underline">arothering94@gmail.com</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-sm mb-2"><strong>Social Media:</strong> <a href="https://www.facebook.com/LLABirdBanders/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook</a></p>
+              <p className="text-sm mb-2"><strong>Average Yearly Activity:</strong> 25.4 new birds/100 net hours</p>
+            </div>
+            
+            
           </div>
-        </div>
 
-        <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
-          <h4 className="font-semibold mb-3" style={{ color: '#2E5266' }}>
-            🔍 What Bird Banding Tells Us
-          </h4>
-          <ul className="space-y-2 text-sm" style={{ color: '#374151' }}>
-            <li className="flex items-start gap-2">
-              <span>•</span>
-              <span><strong>Survival rates:</strong> How many birds return year after year</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span>•</span>
-              <span><strong>Migration routes:</strong> Where birds go and how they get there</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span>•</span>
-              <span><strong>Site fidelity:</strong> Whether birds return to the same locations</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span>•</span>
-              <span><strong>Age structure:</strong> Ratios of young to adult birds in populations</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span>•</span>
-              <span><strong>Body condition:</strong> Health indicators during migration and breeding</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span>•</span>
-              <span><strong>Population connectivity:</strong> How different populations are linked across the landscape</span>
-            </li>
-          </ul>
-        </div>
+          {/* Sand Bluff Bird Observatory */}
+          <div className="bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: '#4A7C59' }}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold mb-1" style={{ color: '#2E5266' }}>
+                  Sand Bluff Bird Observatory
+                </h3>
+                <p className="text-sm font-semibold" style={{ color: '#4A7C59' }}>
+                  Sand Bluff Bird Observatory Inc.
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(74, 124, 89, 0.1)', color: '#4A7C59' }}>
+                Est. 1967
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="text-sm mb-2"><strong>Contact:</strong> Mike Eickman</p>
+                <p className="text-sm mb-2"><strong>Location:</strong> 42.483812, -89.246559</p>
+                <p className="text-sm mb-2"><strong>Type:</strong> Migratory Monitoring</p>
+              </div>
+              <div>
+                <p className="text-sm mb-2"><strong>Open to Visitors:</strong> Yes</p>
+                <p className="text-sm mb-2"><strong>Volunteers:</strong> Yes</p>
+                <p className="text-sm mb-2"><strong>Contact:</strong> <a href="mailto:redtail15@aol.com" className="text-blue-600 hover:underline">redtail15@aol.com</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-sm mb-2"><strong>Website:</strong> <a href="https://sandbluff.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">sandbluffbirdobservatory.org</a></p>
+              <p className="text-sm mb-2"><strong>Social Media:</strong> <a href="https://www.facebook.com/sandbluff.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook</a></p>
+              <p className="text-sm mb-2"><strong>Average Yearly Activity:</strong> 12.11 new birds/100 net hours</p>
+            </div>
+            
+            
+          </div>
+
+          {/* Phillips Tract Banding Station */}
+          <div className="bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: '#4A7C59' }}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold mb-1" style={{ color: '#2E5266' }}>
+                  Phillips Tract Banding Station
+                </h3>
+                <p className="text-sm font-semibold" style={{ color: '#4A7C59' }}>
+                  University of Illinois at Urbana-Champaign
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(74, 124, 89, 0.1)', color: '#4A7C59' }}>
+                Est. 2019
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="text-sm mb-2"><strong>Contact:</strong> Tara Beveroth</p>
+                <p className="text-sm mb-2"><strong>Location:</strong> 40.131101, -88.146895</p>
+                <p className="text-sm mb-2"><strong>Type:</strong> Migratory Monitoring</p>
+              </div>
+              <div>
+                <p className="text-sm mb-2"><strong>Open to Visitors:</strong> With prior notification, we can accommodate individual visitors</p>
+                <p className="text-sm mb-2"><strong>Volunteers:</strong> No</p>
+                <p className="text-sm mb-2"><strong>Contact:</strong> <a href="mailto:beveroth@illinois.edu" className="text-blue-600 hover:underline">beveroth@illinois.edu</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-sm mb-2"><strong>Average Yearly Activity:</strong> 70 new birds/100 net hours (migration)</p>
+            </div>
+            
+            <div className="bg-blue-50 p-4 rounded">
+              <p className="text-sm font-semibold mb-2" style={{ color: '#2E5266' }}>Research Focus:</p>
+              <p className="text-sm" style={{ color: '#374151' }}>
+                Migration phenology and climate change impacts; Migratory stopover and bird activity levels on stopover; How blood metabolite levels and body condition in birds reflect migration strategies during spring and fall migration.
+              </p>
+            </div>
+          </div>
+
+          {/* Illinois Raptor Center Bird Banding Station */}
+          <div className="bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: '#4A7C59' }}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold mb-1" style={{ color: '#2E5266' }}>
+                  Illinois Raptor Center Bird Banding Station
+                </h3>
+                <p className="text-sm font-semibold" style={{ color: '#4A7C59' }}>
+                  Millikin University and Illinois Raptor Center
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(74, 124, 89, 0.1)', color: '#4A7C59' }}>
+                Est. 2022
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="text-sm mb-2"><strong>Contact:</strong> Travis Wilcoxen</p>
+                <p className="text-sm mb-2"><strong>Location:</strong> 39.823056, -89.0525</p>
+                <p className="text-sm mb-2"><strong>Type:</strong> Species Specific Station</p>
+              </div>
+              <div>
+                <p className="text-sm mb-2"><strong>Open to Visitors:</strong> Yes</p>
+                <p className="text-sm mb-2"><strong>Volunteers:</strong>We always welcome new volunteers, but often have our basic needs covered</p>
+                <p className="text-sm mb-2"><strong>Contact:</strong> <a href="mailto:twilcoxen@millikin.edu" className="text-blue-600 hover:underline">twilcoxen@millikin.edu</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-sm mb-2"><strong>Social Media:</strong> <a href="https://www.facebook.com/p/Illinois-Raptor-Center-Bird-Banding-Station-100080308883595/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook</a></p>
+              <p className="text-sm mb-2"><strong>Average Yearly Activity:</strong> 2000 birds</p>
+            </div>
+            
+            <div className="bg-blue-50 p-4 rounded">
+              <p className="text-sm font-semibold mb-2" style={{ color: '#2E5266' }}>Research Focus:</p>
+              <p className="text-sm" style={{ color: '#374151' }}>
+                We study disease dynamics in songbirds and raptors.
+              </p>
+            </div>
+          </div>
+
+            </div>
           </div>
         )}
       </section>
